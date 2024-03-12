@@ -31,11 +31,30 @@ INDEX.HTML
     margin-top: 44px;
 }
 
+.index-body main .right-container {
+    display: flex;
+}
+
 .index-body main .right-container .title {
     font-family: "Anta", sans-serif;
     font-size: 80px;
     text-align: left;
     color: var(--main-green);
+}
+
+.index-body main .right-container .search-container {
+    height: 100%;
+}
+
+.autocenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index-body main .right-container #search {
+    height: 50px;
+    width: 50%;
+    
 }
 
 .index-body main .left-container .subtitle {
@@ -51,18 +70,50 @@ INDEX.HTML
     margin-right: 50px;
 }
 
+.index-body main .nav-header {
+    margin-top: 200px;
+    text-align: center;
+    color: white;
+}
+
 .index-body main .left-container nav {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    
 }
 
 .index-body main .left-container nav a{
-    color: white;
+    color: black;
+    background-color: white;
     text-decoration: none;
     border: 1px solid white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 13px;
     padding-left: 50px;
     padding-right: 50px;
+    transition: background-color 0.5s;
+    width: 200px; /* Ancho fijo para los botones */
+    box-sizing: border-box; /* Incluye el padding en el ancho total del botón */
+    white-space: nowrap; /* Evita el salto de línea si el texto es muy largo */
+    overflow: hidden; /* Oculta el contenido que se desborda del botón */
+    text-overflow: ellipsis;
+    text-align: center;
 }
+
+.index-body main .left-container nav a:first-child {
+    margin-right: 6px;
+}
+
+.index-body main .left-container nav a:last-child {
+    margin-left: 6px;
+}
+
+.index-body main .left-container nav a:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+.index-body footer {
+    position: absolute;
+    bottom: 0;
+}
+
