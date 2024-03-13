@@ -5,6 +5,7 @@ body {
 }
 :root {
     --main-green: #067202;
+    --outline-input: #c2c8d0;
 
 }
 /* ======================================================================================
@@ -47,13 +48,116 @@ INDEX.HTML
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .index-body main .right-container #search {
     height: 50px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: none;
+    outline: 1px solid var(--outline-input);
     
+}
+
+.index-body main .right-container #search:focus {
+    outline: 1px solid var(--main-green);
+}
+
+/* search bar styles */
+.form__input {
+    width: clamp(120px, 50vw, 420px);
+    height: 2.5rem;
+    padding: 0 1.25rem;
+    border: 1px solid var(--outline-input);
+    border-radius: 5px;
+    margin: 0.625rem auto;
+    transition: all 250ms;
+}
+    
+.form__input:focus {
+    outline: none;
+    border: 1px solid var(--main-green);
+    border-top-color: rgba(0,0,0,0.1);
+}
+
+/* When the input field (.form__input) is in focus, 
+    transform the .form__label and change colors*/
+/* ALSO, if the input field's placeholder is NOT shown (when the input field has content),
+    transform the .form__label and change colors. */
+.form__input:focus + .form__label, .form__input:not(:placeholder-shown) + .form__label {
+    transform: translateY(-4.50rem) scale(1);
+    color: var(--main-green);
+}
+
+/* THIS PART IS IMPORTANT!! */
+/* The block below hides the placeholder entirely. */
+/* For all intents and purposes, the placeholder no longer exists. */
+/* What shows on the input field is only the label*. */
+/* HOWEVER, the input fields still recognizes that the placeholder exists!*/
+/* The placeholder is just invisible. We need the placeholder to exist for
+    some weird CSS stuff. If we skip this, we can't make it CSS-only. */
+.form__input::placeholder {
+    display: none;
+    color: transparent;
+    
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+/* When the placeholder is NOT shown,
+    style the top border. */
+/* This makes the top border fade-out when the placeholder disappears. */
+.form__input:not(:placeholder-shown) {
+    border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.form__label {
+    font-size: 1rem;
+    color: grey;
+    display: block;
+
+    /* Moves the label on TOP of the placeholder */
+    /* You'll need to change this as needed */
+    transform: translate(0,-2.8rem);
+    transform-origin: 0 0; /* Used later for transitions */
+    transition: all 500ms;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+    /* THIS PART IS IMPORTANT! */
+    /* This line prevents the label from being selected.*/
+    /* This is crucial because if this line doesn't exist, users can
+        click on the label, instead of the input field. That's bad UX! */
+    pointer-events: none;
+    padding-left: 101px;
+}
+
+.index-body main .right-container .radio-image-group {
+    display: flex;
+    justify-content: center;
+}
+
+.radio-image-group label {
+    cursor: pointer;
+    border: 2px solid transparent;
+    display: inline-block; /* Ajusta según necesites */
+    background-color: var(--main-green);
+    border-radius: 10px;
+}
+
+.radio-image-group label img {
+    display: block; /* Asegura que la imagen se ajuste al label */
+    width: 100px; /* Ajusta al tamaño deseado */
+    height: auto;
+}
+
+.radio-image-group input[type="radio"]:checked + label {
+    border-color: blue; /* Cambia el color de borde para el seleccionado */
 }
 
 .index-body main .left-container .subtitle {

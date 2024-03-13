@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.gstatic.com https://ajax.googleapis.com https://kit.fontawesome.com data: https://musicbrainz.org gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; media-src *; img-src * 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -41,10 +41,27 @@
                 <h1 class="title">MASTER</h1>
 
                 <div class="search-container">
-                    <input id="search" type="text" name="search" placeholder="Search your favorite movies, games and books">
+                    <!--<input id="search" type="text" name="search" class="inputText" placeholder="Search your favorite movies, games and books">-->
+                    <input type="text" id="question" name="question" required class="form__input" placeholder="Search your favorite movies, games and books">
+                    <label for="question" class="form__label">Search your favorite movies, games and books</label>
                 </div>
-                
 
+                <div class="radio-image-group">
+                    <input type="radio" name="category" id="movies" hidden>
+                    <label for="movies">
+                        <img src="img/camera.png" alt="Movies" />
+                    </label>
+
+                    <input type="radio" name="category" id="games" hidden>
+                    <label for="games">
+                        <img src="img/gamepad.png" alt="Video Games" />
+                    </label>
+
+                    <input type="radio" name="category" id="books" hidden>
+                    <label for="books">
+                        <img src="img/book.png" alt="Books" />
+                    </label>
+                </div>
                 
                 <footer>
                     <p>© 2024 Developed by Geanfranco Biaggi | Pau Maestre | Isaac Furió</p>
