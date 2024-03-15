@@ -5,6 +5,7 @@ body {
 }
 :root {
     --main-green: #067202;
+    --hover-green: #043603;
     --outline-input: #c2c8d0;
 
 }
@@ -140,6 +141,7 @@ INDEX.HTML
 .index-body main .right-container .radio-image-group {
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
 .radio-image-group label {
@@ -148,16 +150,19 @@ INDEX.HTML
     display: inline-block; /* Ajusta según necesites */
     background-color: var(--main-green);
     border-radius: 10px;
+    transition: transform 0.3s ease; /* Transición suave */
 }
 
 .radio-image-group label img {
     display: block; /* Asegura que la imagen se ajuste al label */
-    width: 100px; /* Ajusta al tamaño deseado */
+    width: 50px; /* Ajusta al tamaño deseado */
     height: auto;
+    transition: transform 0.3s ease; /* Transición suave */
 }
 
 .radio-image-group input[type="radio"]:checked + label {
-    border-color: blue; /* Cambia el color de borde para el seleccionado */
+    background-color: var(--hover-green);
+    transform: scale(1.1);
 }
 
 .index-body main .left-container .subtitle {
