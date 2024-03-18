@@ -46,30 +46,32 @@
                     <label for="question" class="form__label">Search your favorite movies, series, games and books</label>
                 </div>
 
-                <div class="radio-image-group">
-                    <input type="radio" name="category" id="movies" hidden checked>
+                <div id="categorySelect" class="radio-image-group">
+                    <input type="radio" name="category" id="movies" value="movie" hidden checked>
                     <label for="movies">
                         <img src="img/camera.png" alt="Movies" />
                     </label>
 
-                    <input type="radio" name="category" id="series" hidden>
+                    <input type="radio" name="category" id="series" value="tv" hidden>
                     <label for="series">
                         <img src="img/tv.png" alt="Series" />
                     </label>
 
-                    <input type="radio" name="category" id="games" hidden>
+                    <input type="radio" name="category" id="games" value="games" hidden>
                     <label for="games">
                         <img src="img/gamepad.png" alt="Video Games" />
                     </label>
 
-                    <input type="radio" name="category" id="books" hidden>
+                    <input type="radio" name="category" id="books" value="books" hidden>
                     <label for="books">
                         <img src="img/book.png" alt="Books" />
                     </label>
                 </div>
+
+                <div id="details" class="infoDetails"></div>
                 
                 <footer>
-                    <p>© 2024 Developed by Geanfranco Biaggi | Pau Maestre | Isaac Furió</p>
+                    <p>© 2024 Developed by Geanfranco Biagi | Pau Maestre | Isaac Furió</p>
                 </footer>
             </div>
         </main>
